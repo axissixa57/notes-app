@@ -1,0 +1,6 @@
+** etc folder needs to restore configs and other 
+** config.json - тут будет храниться порт для сервера, название бд, хост и порт для бд, а также api префикс(адрес по которому будет обращаться для запросов к нашему API)
+
+** package.json:
+
+! react-hot-loader
