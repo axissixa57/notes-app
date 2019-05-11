@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: "./client/main.js",
@@ -19,12 +20,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader",
+                loader: 'style-loader!css-loader!autoprefixer-loader',
                 exclude: [/node_modules/, /public/]
             },
             {
                 test: /\.less$/,
-                loader: "style-loader!css-loader!autoprefixer-loader!less",
+                loaders: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'], 
                 exclude: [/node_modules/, /public/]
             },
             {
@@ -48,10 +49,10 @@ module.exports = {
                 loaders: ['react-hot-loader/webpack', 'babel-loader'],
                 exclude: [/node_modules/, /public/]
             },
-            {
-                test: /\.json$/,
-                loader: "json-loader"
-            }
+            // {
+            //     test: /\.json$/,
+            //     loader: "json-loader"
+            // }
         ]
     }
 }

@@ -1,7 +1,7 @@
 {
   "presets": [
     [
-      "@babel/preset-env", // пресет который установили с помощью npm
+      "@babel/preset-env", // нужен для поддержки возможностей стандарта ES2015+
       {
         "targets": {
           "chrome": "72" // bebel транслирует код именно в эту версию Chrome
@@ -9,7 +9,7 @@
       },
     ],
     [
-      "@babel/preset-react", // пресет который установили с помощью npm
+      "@babel/preset-react", // необходим для работы в связке с React.js и файлами jsx
       {
         "targets": {
           "chrome": "72" // bebel транслирует код именно в эту версию Chrome
