@@ -21,6 +21,7 @@ app.use(bodyParser.json()); // нужен для того чтобы кажды�
 // CORS on ExpressJS
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 }); // если не написать будет ошибка Origin <origin> is not allowed by Access-Control-Allow-Origin

@@ -18,16 +18,6 @@ class ColorPicker extends React.Component {
                             style={{ backgroundColor: color }}
                             onClick={this.props.onChange.bind(null, color)}
                         />
-                        // <div
-                        //     key={color}
-                        //     className={
-                        //         this.props.value === color
-                        //         ? 'ColorPicker__swatch'
-                        //         : 'ColorPicker__swatch selected'
-                        //     }
-                        //     style={{ backgroundColor: color }}
-                        //     onClick={this.props.onChange.bind(null, color)}
-                        // />
                     )
                 }
             </div>

@@ -31,7 +31,6 @@ class NoteEditor extends React.Component {
     handleColorChange(color) {
         console.log(color);
         this.setState({ color });
-        //console.log(this.setState({title: 'Hello'}));
     }
 
     handleNoteAdd() {

@@ -6,11 +6,6 @@ import Masonry from 'react-masonry-component';
 import './NotesGrid.less';
 
 class NotesGrid extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {};
-    // }
-
     render() {
         const masonryOptions = {
             itemSelector: '.Note',
@@ -21,24 +16,10 @@ class NotesGrid extends React.Component {
 
         return (
 
-            // <Masonry
-            //     className='NotesGrid'
-            //     options={masonryOptions}
-            // >
-            //     {
-            //         this.props.notes.map(note =>
-            //             <Note
-            //                 key={note.id}
-            //                 title={note.title}
-            //                 onDelete={this.props.onNoteDelete.bind(null, note)}
-            //                 color={note.color}
-            //             >
-            //                 {note.text}
-            //             </Note>
-            //         )
-            //     }
-            // </Masonry>
-            <div>
+            <Masonry
+                className='NotesGrid'
+                options={masonryOptions}
+            >
                 {
                     this.props.notes.map(note =>
                         <Note
@@ -51,7 +32,7 @@ class NotesGrid extends React.Component {
                         </Note>
                     )
                 }
-            </div>
+            </Masonry>
         );
     }
 }

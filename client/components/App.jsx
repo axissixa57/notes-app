@@ -20,10 +20,8 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = getStateFromFlux();
-        console.log(getStateFromFlux());
 
-        // this.handleNoteAdd = this.handleNoteAdd.bind(this);
-        // this.handleNoteDelete = this.handleNoteAdd.bind(this);
+        this._onChange = this._onChange.bind(this);
     }
 
     // вызывается непосредственно перед рендерингом компонента
@@ -44,8 +42,8 @@ class App extends React.Component {
     }
 
     // сюда передаётся объект из NoteEditor.jsx - { text: '', title: '', color: '#FFFFFF' }
-    handleNoteAdd(data) {
-        NotesActions.createNote(data);
+    handleNoteAdd(noteData) {
+        NotesActions.createNote(noteData);
     }
 
     handleNoteDelete(note) {
@@ -66,8 +64,7 @@ class App extends React.Component {
     // будет вызываться каждый раз, когда в store буду произведены изменения,
     // т.е. когда будет происходить emit('change') 
     _onChange() {
-        //this.setState(getStateFromFlux());
-        this.setState = getStateFromFlux();
+        this.setState(getStateFromFlux());
     }
 
 }
