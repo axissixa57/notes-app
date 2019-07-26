@@ -8,7 +8,7 @@ import NotesGrid from './NotesGrid.jsx';
 
 import './App.less';
 
-// ф-ция, кот. будет вызываться каждый раз когда будут происходить изменения в store (NotesStore.js), т.е. когда будет происходить emit('change')
+// при возникновении события 'change' сработает эта ф-ция
 function getStateFromFlux() {
     return {
         isLoading: NotesStore.isLoading(),
@@ -24,24 +24,29 @@ class App extends React.Component {
         this._onChange = this._onChange.bind(this);
     }
 
+    _onChange() {
+        this.setState(getStateFromFlux());
+    }
+
     // вызывается непосредственно перед рендерингом компонента
     componentWillMount() {
         NotesActions.loadNotes();
     }
 
-    // вызывается после рендеринга компонента. Здесь можно выполнять запросы к удаленным ресурсам
-    // подписка на изменение в store
+    // вызывается после рендеринга компонента. 
+    // здесь можно выполнять запросы к удаленным ресурсам
+    // подписка на событие 'change' (в store) и указываем обработчик
     componentDidMount() {
         NotesStore.addChangeListener(this._onChange);
     }
 
     // вызывается перед удалением компонента из DOM
-    // отписка на изменение в store
+    // отписка от события 'change' в store
     componentWillUnmount() {
         NotesStore.removeChangeListener(this._onChange);
     }
 
-    // сюда передаётся объект из NoteEditor.jsx - { text: '', title: '', color: '#FFFFFF' }
+    // noteData - { text: '', title: '', color: '#FFFFFF' }
     handleNoteAdd(noteData) {
         NotesActions.createNote(noteData);
     }
@@ -57,14 +62,7 @@ class App extends React.Component {
                 <NoteEditor onNoteAdd={this.handleNoteAdd} />
                 <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete} /> 
             </div>
-            // this.handleNoteAdd, this.handleNoteDelete - ссылки на обработчик события
         );
-    }
-
-    // будет вызываться каждый раз, когда в store буду произведены изменения,
-    // т.е. когда будет происходить emit('change') 
-    _onChange() {
-        this.setState(getStateFromFlux());
     }
 
 }

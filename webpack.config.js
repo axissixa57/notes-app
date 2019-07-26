@@ -13,10 +13,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: "babel-loader",
-                exclude: [/node_modules/, /public/]
-                // options:{
-                //     presets:["@babel/preset-env", "@babel/preset-react"]  // используемые плагины
-                // } // используется вместо .babelrc
+                exclude: [/node_modules/, /public/],
+                options:{
+                    presets:["@babel/preset-env", "@babel/preset-react"]
+                } 
             },
             {
                 test: /\.css$/,
@@ -47,12 +47,8 @@ module.exports = {
             {
                 test: /\.jsx$/,
                 loaders: ['react-hot-loader/webpack', 'babel-loader'],
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/, /public/],
             },
-            // {
-            //     test: /\.json$/,
-            //     loader: "json-loader"
-            // }
         ]
     }
 }

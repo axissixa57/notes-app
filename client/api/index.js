@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// берём адрес сервера
 import { apiPrefix } from '../../etc/config.json';
 
 export default {

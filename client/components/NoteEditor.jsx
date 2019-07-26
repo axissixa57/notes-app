@@ -2,7 +2,7 @@ import React from 'react';
 
 import ColorPicker from './ColorPicker.jsx';
 
-import './NoteEditor.less'; // стили 
+import './NoteEditor.less'; 
 
 class NoteEditor extends React.Component {
     constructor(props) {
@@ -17,7 +17,6 @@ class NoteEditor extends React.Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleNoteAdd = this.handleNoteAdd.bind(this);
         this.handleColorChange = this.handleColorChange.bind(this);
-        // Главная сложность, которая может возникнуть при использовании событий, это работа с ключевым словом this, которое указывает на текущий объект, в данном случае компонент. По умолчанию в функцию обработчика не передается текущий объект, поэтому this будет иметь значение undefined. И ни к каким свойствам и методам компонента через this мы обратиться не сможем.
     }
 
     handleTextChange(event) {
@@ -29,7 +28,6 @@ class NoteEditor extends React.Component {
     }
 
     handleColorChange(color) {
-        console.log(color);
         this.setState({ color });
     }
 
@@ -45,7 +43,6 @@ class NoteEditor extends React.Component {
     }
 
     render() {
-        // рендер редактора
         return (
             <div className='NoteEditor'>
                 <input

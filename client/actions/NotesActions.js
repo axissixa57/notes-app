@@ -1,13 +1,9 @@
-// Actions — хелперы, упрощающие передачу данных Диспетчеру
-// Это набор методов, которые вызываются из Представлений (или из любых других мест), чтобы отправить Действия Диспетчеру. 
-// В реализации Facebook Действия различаются по типу — константе, которая посылается вместе с данными действия. 
-// В зависимости от типа, Действия могут быть соответствующим образом обработаны в зарегистрированных обработчиках, при этом данные из этих Действий используются как аргументы внутренних методов.
-
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import Constants from '../constants/AppConstants';
 
 import api from '../api';
 
+// actions обращается к api
 const NoteActions = {
     loadNotes() {
         AppDispatcher.dispatch({
@@ -51,5 +47,3 @@ const NoteActions = {
 };
 
 export default NoteActions;
-
-// actions обращается к api
