@@ -25,11 +25,10 @@
     "react-masonry-component": "^6.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.4.4",
     "autoprefixer": "^9.5.1",
     "autoprefixer-loader": "*",
     "babel-loader": "^8.0.5",

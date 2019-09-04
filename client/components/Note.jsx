@@ -18,7 +18,7 @@ class Note extends React.Component {
                         :
                         null
                 }
-                <div className='Note__text'>{}</div>
+                <div className='Note__text'>{this.props.children}</div>
             </div>
         );
     }

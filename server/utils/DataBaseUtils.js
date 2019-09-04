@@ -7,7 +7,8 @@ import config from '../../etc/config.json';
 const Note = mongoose.model('Note');
 
 export function setUpConnection() {
-    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, { useNewUrlParser: true }); // подключение к базе данных notes; 'mongodb://localhost/notes'
+    // mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, { useNewUrlParser: true });
+    mongoose.connect('mongodb+srv://Ax1S:niW2GScgBXO5tjgS@wmscluster-0jm4z.mongodb.net/notes?retryWrites=true&w=majority', { useNewUrlParser: true });
 }
 
 export function listNotes() {
@@ -26,7 +27,7 @@ export function createNote(data) {
 }
 
 export function deleteNote(id) {
-    return Note.findById(id).remove(); // удаление из коллекции в бд
+    return Note.findById(id).deleteOne(); // удаление из коллекции в бд
 }
 
 // каждый из методов встроенных в mongoose возращает Promise object

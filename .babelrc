@@ -1,24 +1,8 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env", // нужен для поддержки возможностей стандарта ES2015+
-      {
-        "targets": {
-          "chrome": "74" // bebel транслирует код именно в эту версию Chrome
-        }, // необходимо для корректной работы unit-testов
-      },
-    ],
-    [
-      "@babel/preset-react", // необходим для работы в связке с React.js и файлами jsx
-      {
-        "targets": {
-          "chrome": "74" // bebel транслирует код именно в эту версию Chrome
-        }, // необходимо для корректной работы unit-testов
-      },
-    ],
-  ],
-  "plugins": []
+  "env": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
 }
-
-
-
